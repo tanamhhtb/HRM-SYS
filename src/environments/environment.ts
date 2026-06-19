@@ -1,3 +1,11 @@
+const apiBase = "/api";
+const aipVersions = {
+    v1 : `${apiBase}/v1`,
+    v2 : `${apiBase}/v2`
+}
+
 export const environment = {
-    apiUrl: `/api/v1`,
+    production: false,
+    apiBase,
+    aipVersions
 };
