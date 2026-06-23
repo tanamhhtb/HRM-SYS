@@ -2,6 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs';
 import { AuthUser, LoginRequest, LoginResponse } from '../models/auth.model';
+import { AUTH_API } from '../../features/auth/auth.api';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -13,7 +14,7 @@ export class AuthService {
   permissions  = computed(() => this._currentUser()?.permissions ?? []);
 
   login(request: LoginRequest) {
-    return this.http.post<LoginResponse>('/api/v1/auth/login', request).pipe(
+    return this.http.post<LoginResponse>(AUTH_API.LOGIN, request).pipe(
       tap(response => {
         localStorage.setItem('access_token', response.accessToken);
         this._currentUser.set(response.user);
@@ -27,7 +28,7 @@ export class AuthService {
   }
 
   getProfile() {
-    return this.http.get<AuthUser>('/api/v1/auth/profile').pipe(
+    return this.http.get<AuthUser>(AUTH_API.PROFILE).pipe(
       tap(user => {
         this._currentUser.set(user);
       })
