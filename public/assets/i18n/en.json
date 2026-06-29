@@ -19,5 +19,9 @@
     "CONFIRM_DIALOG": {
         "DELETE": "Delete employee",
         "DELETE_MESSAGE": "Are you sure you want to delete <strong>{{username}}</strong>? This action cannot be undone."
+    },
+    "BTN": {
+        "CANCEL_BTN": "Cancel",
+        "DELETE_BTN": "Erase"
     }
 }

@@ -19,5 +19,9 @@
     "CONFIRM_DIALOG": {
         "DELETE": "删除员工",
         "DELETE_MESSAGE": "您确定要删除 <strong>{{username}}</strong> 吗？此操作无法撤销。"
+    },
+    "BTN": {
+        "CANCEL_BTN": "取消",
+        "DELETE_BTN": "擦除"
     }
 }

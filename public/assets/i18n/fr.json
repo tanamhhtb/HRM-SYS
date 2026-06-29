@@ -19,5 +19,9 @@
     "CONFIRM_DIALOG": {
         "DELETE": "Supprimer employé",
         "DELETE_MESSAGE": "Êtes-vous sûr de vouloir supprimer <strong>{{username}}</strong> ? Cette action est irréversible."
+    },
+    "BTN": {
+        "CANCEL_BTN": "Annuler",
+        "DELETE_BTN": "Effacer"
     }
 }

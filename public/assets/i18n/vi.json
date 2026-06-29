@@ -20,6 +20,10 @@
         "DELETE": "Xóa nhân viên?",
         "DELETE_MESSAGE": "Bạn có chắc muốn xóa <strong>{{username}}</strong>? Hành động này không thể hoàn tác.'"
     },
+    "BTN": {
+        "CANCEL_BTN": "Hủy",
+        "DELETE_BTN": "Xóa"
+    },
 
     "LOGIN": {
         "TITLE": "Đăng nhập hệ thống",

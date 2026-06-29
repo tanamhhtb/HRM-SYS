@@ -5,7 +5,7 @@ import { Component, Input , OnChanges , SimpleChanges } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './btn-pagination.component.html',
-  styleUrl: './btn-pagination.component.scss'
+  styleUrls: ['./btn-pagination.component.scss']
 })
 export class BtnPaginationComponent {
   @Input() pageNumber!: number | string ;
