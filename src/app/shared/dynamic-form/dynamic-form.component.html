@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  @for (field of fields(); track field.name) {
+
+    @if (field.type === 'text') {
+      <app-text-field
+        [config]="field"
+        [control]="getControl(field.name)"
+      />
+    }
+    @if (field.type === 'password') {
+      <app-password-field
+        [config]="field"
+        [control]="getControl(field.name)"
+      />
+    }
+  }
+  <button type="submit"
+   [disabled]="isLoading()"
+   class="w-full py-2.5 rounded-lg font-semibold text-sm text-white
+         bg-blue-600 hover:bg-blue-700 active:bg-blue-800
+         disabled:opacity-60 disabled:cursor-not-allowed
+         transition-colors"
+   >{{ submitLabel() }}</button>
+</form>

@@ -1,105 +1,29 @@
 <div class="min-h-screen flex items-center justify-center p-4 bg-[#eef2f7]">
   <div class="bg-white rounded-xl shadow-sm border border-gray-200
               w-[420px] min-h-[470px] px-10 py-9">
-
     <div class="flex justify-center">
       <div class="w-16 h-16 rounded-full flex items-center justify-center bg-blue-100">
         <span class="font-bold text-lg text-blue-600">HRM</span>
       </div>
     </div>
-
     <h1 class="mt-8 text-center text-xl font-semibold text-slate-800">
       {{ 'LOGIN.TITLE' | translate }}
     </h1>
     <p class="mt-1 text-center text-sm text-slate-500">
       {{ 'LOGIN.SUBTITLE' | translate }}
     </p>
-
     @if (errorMsg) {
       <div class="flex items-center gap-2 bg-red-50 mt-4 border border-red-200
                   text-red-700 rounded-lg px-4 py-3 mb-2 text-sm">
         <span>{{ errorMsg }}</span>
       </div>
     }
-
-    <form [formGroup]="form" (ngSubmit)="onLogin()" class="mt-6">
-      <div class="mb-4">
-        <label class="block text-sm font-semibold mb-1.5 text-gray-700">
-          {{ 'LOGIN.USERNAME_LABEL' | translate }}
-        </label>
-        <input
-          type="text"
-          formControlName="username"
-          [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate"
-          class="w-full rounded-lg outline-none text-sm px-3.5 py-2.5
-                 border text-gray-900 transition-all box-border
-                 focus:ring-2 focus:ring-blue-100"
-          [class.border-red-400]="username.invalid && username.touched"
-          [class.border-slate-300]="!(username.invalid && username.touched)"
-        />
-        @if (username.invalid && username.touched) {
-          <p class="text-red-500 text-xs mt-1">
-            {{ 'LOGIN.VALIDATION.USERNAME_REQUIRED' | translate }}
-          </p>
-        }
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-sm font-semibold mb-1.5 text-gray-700">
-          {{ 'LOGIN.PASSWORD_LABEL' | translate }}
-        </label>
-        <input
-          type="password"
-          formControlName="password"
-          [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
-          class="w-full rounded-lg outline-none text-sm px-3.5 py-2.5
-                 border text-gray-900 transition-all box-border
-                 focus:ring-2 focus:ring-blue-100"
-          [class.border-red-400]="password.invalid && password.touched"
-          [class.border-slate-300]="!(password.invalid && password.touched)"
-        />
-        @if (password.invalid && password.touched) {
-          @if (password.hasError('required')) {
-            <p class="text-red-500 text-xs mt-1">
-              {{ 'LOGIN.VALIDATION.PASSWORD_REQUIRED' | translate }}
-            </p>
-          } @else if (password.hasError('minlength')) {
-            <p class="text-red-500 text-xs mt-1">
-              {{ 'LOGIN.VALIDATION.PASSWORD_MIN' | translate }}
-            </p>
-          }
-        }
-      </div>
-
-      <div class="flex items-center justify-between mb-6">
-        <label class="flex items-center gap-2 text-xs text-gray-500 cursor-pointer">
-          <input type="checkbox" />
-          {{ 'LOGIN.REMEMBER_ME' | translate }}
-        </label>
-        <a href="#" class="text-xs text-blue-600 hover:underline">
-          {{ 'LOGIN.FORGOT_PASSWORD' | translate }}
-        </a>
-      </div>
-
-      <button
-        type="submit"
-        [disabled]="isLoading"
-        class="w-full py-2.5 rounded-lg font-semibold text-sm text-white
-               bg-blue-600 hover:bg-blue-700 active:bg-blue-800
-               disabled:opacity-60 disabled:cursor-not-allowed
-               transition-colors"
-      >
-        @if (isLoading) {
-          <span class="flex items-center justify-center gap-2">
-            <i class="pi pi-spin pi-spinner"></i>
-            {{ 'LOGIN.SUBMITTING' | translate }}
-          </span>
-        } @else {
-          {{ 'LOGIN.SUBMIT' | translate }}
-        }
-      </button>
-    </form>
-
+    <app-dynamic-form
+      [fields]="fields"
+      [submitLabel]="'LOGIN.SUBMIT' | translate"
+      [isLoading]="isLoading"
+      (formSubmit)="onLogin($event)"
+    />
     <p class="text-center mt-4 text-[10px] text-gray-400">
       {{ 'LOGIN.HINT' | translate }}
     </p>
