@@ -1,13 +1,15 @@
 import { Component, inject } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
+import { ReactiveFormsModule, Validators } from "@angular/forms";
 import { TranslatePipe, TranslateService } from "@ngx-translate/core";
 import { AuthService } from "../../../../core/services/auth.service";
+import { FormfieldConfig } from "../../../../shared/models/form-field.model";
+import { DynamicFormComponent } from "../../../../shared/dynamic-form/dynamic-form.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule,TranslatePipe],
+  imports: [ReactiveFormsModule,TranslatePipe,DynamicFormComponent],
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
@@ -16,27 +18,38 @@ export class LoginComponent {
   private route = inject(ActivatedRoute);
   private translate = inject(TranslateService);
 
-  form = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-  });
-
+fields: FormfieldConfig[] = [
+  {
+    name: 'username',
+    type: 'text',
+    label: 'LOGIN.USERNAME_LABEL',
+    placeholder: 'LOGIN.USERNAME_PLACEHOLDER',
+    validators: [Validators.required],
+    errorMessage: {
+      required:'LOGIN.VALIDATION.USERNAME_REQUIRED' 
+    }
+  },
+  {
+    name: 'password',
+    type: 'password',
+    label: 'LOGIN.PASSWORD_LABEL',
+    placeholder: 'LOGIN.PASSWORD_PLACEHOLDER',
+    validators: [Validators.required, Validators.minLength(6)],
+    errorMessage: {
+      required: 'LOGIN.VALIDATION.PASSWORD_REQUIRED',
+      minLenght: 'LOGIN.VALIDATION.PASSWORD_MIN'
+    }
+  }
+];
   isLoading = false;
   errorMsg = '';
 
-  get username() { return this.form.get('username')!; }
-  get password() { return this.form.get('password')!; }
-
-  onLogin() {
+  onLogin(data: Record<string, any>) {
     this.errorMsg = '';
-    this.form.markAllAsTouched();
-    if (this.form.invalid) return;
-
     this.isLoading = true;
-
     this.authService.login({
-      username: this.username.value!.trim(),
-      password: this.password.value!,
+      username: data['username'].trim(),
+      password: data['password'], 
     }).subscribe({
       next: () => {
         const returnUrl = this.route.snapshot.queryParams['returnUrl'] ?? '/dashboard';
