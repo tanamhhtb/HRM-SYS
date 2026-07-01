@@ -11,7 +11,7 @@ export interface  BaseFieldConfig{
     validators ?: ValidatorFn[];
     errorMessage ?: {
         required ?: string;
-        min_length ?: string;
+        minLength ?: string;
         pattern ?: string;
     }
 }
