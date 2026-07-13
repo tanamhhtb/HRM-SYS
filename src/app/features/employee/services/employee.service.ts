@@ -9,7 +9,7 @@ export class EmployeeService extends CrudService<Employee> {
         super('/employees');
     }
 
-    getEmployees() {
-        return this.list();
+    getEmployees(page: string = '0', size: string = '10', sort?: string) {
+        return this.getPage(page, size, sort);
     }
 }

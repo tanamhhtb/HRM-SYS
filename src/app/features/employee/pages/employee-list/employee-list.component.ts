@@ -76,20 +76,50 @@ export class EmployeeListComponent {
 
 
   loadEmployees() {
-    this.employeeService.getEmployees().subscribe({
+    const sort = this.sortField()
+      ? `${this.sortField()},${this.sortDirection()}`
+      : undefined;
+
+    this.employeeService.getEmployees(
+      String(this.pageIndex()),
+      String(this.pageSize()),
+      sort
+    ).subscribe({
       next: (res) => {
         this.data.set(res.content);
-        console.log(res.content);
+        this.totalElement.set(res.totalElements);
+        this.pageIndex.set(res.number ?? this.pageIndex());
+        this.pageSize.set(res.size ?? this.pageSize());
+        console.log(res);
+        console.log(sort)
       },
       error: (err) => {
         console.error(err);
       }
-    })
+    });
   }
   ngOnInit(): void {
     this.loadEmployees();
     console.log(this.data);
     console.log('hi');
+  }
+
+  onPageChange(event:{
+    page: number;
+    size: number
+  }): void {
+    this.pageIndex.set(event.page);
+    this.pageSize.set(event.size);
+    this.loadEmployees();
+  }
+  onSortChange(event:{
+    field: string;
+    direction: 'asc'| 'desc';
+  }):void{
+    this.sortField.set(event.field);
+    this.sortDirection.set(event.direction);
+    this.pageIndex.set(0);
+    this.loadEmployees();
   }
 
 }

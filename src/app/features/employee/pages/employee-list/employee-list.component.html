@@ -12,5 +12,7 @@
   [pageSize]="pageSize()"
   [sortField]="sortField()"
   [sortDirection]="sortDirection()"
+  (pageChange)="onPageChange($event)"
+  (sortChange)="onSortChange($event)"
 >
 </app-data-table>

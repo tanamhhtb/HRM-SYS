@@ -41,9 +41,11 @@ export class DataTableComponent<T extends Record<string, any> = any> {
   }
 
   changeSort(col: TableColumn<T>) {
-    if (!col.sortable) return;
+   
+    
 
     const key = col.key as string;
+    console.log(key)
 
     if (this.sortField === key) {
       this.sortDirection =
