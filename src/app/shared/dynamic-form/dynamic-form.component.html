@@ -74,7 +74,8 @@
       <app-search-field
         [config]= "field"
         [control]= "getControl(field.name)"
-        [class]= "field.className?.span ?? ''">
+        [class]= "field.className?.span ?? ''"
+        (searchChange)="searchChange.emit($event)">
       </app-search-field>
     }
   }

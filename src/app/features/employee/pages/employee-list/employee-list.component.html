@@ -1,6 +1,7 @@
 <app-dynamic-form
     [fields]="fields"
-    [formClass]="formClass" 
+    [formClass]="formClass"
+    (searchChange)="onSearchChange($event)"
 ></app-dynamic-form>
 
 <app-data-table

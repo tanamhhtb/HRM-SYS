@@ -4,7 +4,7 @@ import { Component , inject, signal } from '@angular/core';
 import { DataTableComponent } from '../../../../shared/components/data-table/data-table.component';
 import { DynamicFormComponent } from '../../../../shared/dynamic-form/dynamic-form.component';
 
-import { DEPARTMENT_OPTIONS, JOB_TITLE_OPTIONS, STATUS_OPTIONS } from '../../../../shared/dynamic-form/constants/selectOption.constants';
+import { DEPARTMENT_OPTIONS, JOB_TITLE_OPTIONS, STATUS_OPTIONS } from '../../../../shared/constants/selectOption.constants';
 
 import { SelectField } from '../../../../shared/models/field-types/select-field.model';
 import { SearchField } from '../../../../shared/models/field-types/search-field.model';
@@ -73,7 +73,8 @@ export class EmployeeListComponent {
   pageSize = signal(10);
   sortField = signal('');
   sortDirection = signal<'asc'|'desc'>('asc');
-
+  
+  searchKeyword = signal('');
 
   loadEmployees() {
     const sort = this.sortField()
@@ -102,6 +103,11 @@ export class EmployeeListComponent {
     this.loadEmployees();
     console.log(this.data);
     console.log('hi');
+  }
+
+  onSearchChange(value: string): void {
+    this.searchKeyword.set(value ?? '');
+    console.log('Search keyword:', this.searchKeyword());
   }
 
   onPageChange(event:{

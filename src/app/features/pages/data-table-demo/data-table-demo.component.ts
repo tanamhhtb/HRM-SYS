@@ -8,8 +8,8 @@ import { DataTableComponent } from './../../../shared/components/data-table/data
 import { SearchBarComponent } from '../../../shared/components/search-bar/search-bar.component';
 import { DynamicFormComponent } from '../../../shared/dynamic-form/dynamic-form.component';
 
-import { USER_ROLE_OPTIONS } from '../../../shared/dynamic-form/constants/selectOption.constants';
-import { ACOUNT_STATUS_OPTION } from '../../../shared/dynamic-form/constants/radioOption.constants';
+import { USER_ROLE_OPTIONS } from '../../../shared/constants/selectOption.constants';
+import { ACOUNT_STATUS_OPTION } from '../../../shared/constants/radioOption.constants';
 
 import { DateField } from '../../../shared/models/field-types/date-field.model';
 import { RadioField } from '../../../shared/models/field-types/radio-field.model';
