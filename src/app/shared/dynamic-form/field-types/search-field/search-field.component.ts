@@ -20,6 +20,7 @@ export class SearchFieldComponent {
   config = input.required<SearchField>();
   control = input.required<FormControl>();
   searchChange = output<string>();
+  searchClick = output<void>();
 
   ngOnInit() {
     this.control().valueChanges
@@ -31,6 +32,10 @@ export class SearchFieldComponent {
       const searchValue = typeof value === 'string' ? value : '';
       this.searchChange.emit(searchValue);
     })
+  }
+  onSearchClick(): void {
+    this.searchClick.emit();
+    console.log("hi")
   }
   clear() {
     this.control().setValue('');

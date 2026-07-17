@@ -6,7 +6,7 @@ import { Employee, EmployeeSearchRequest } from "../models/employee.model";
 export class EmployeeService extends CrudService<Employee, EmployeeSearchRequest> {
     
     constructor() {
-        super('/employees');
+        super('employees');
     }
 
     getEmployees(page: string = '0', size: string = '10', sort?: string) {

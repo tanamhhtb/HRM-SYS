@@ -44,7 +44,7 @@ export interface SearchRequest {
     keyword?: string;
 }
 
-export interface EmployeeSearchRequest {
+export interface EmployeeSearchRequest extends SearchRequest {
     departmentId ?: number;
     positionId?: number;
     status?: EmployeeStatus;

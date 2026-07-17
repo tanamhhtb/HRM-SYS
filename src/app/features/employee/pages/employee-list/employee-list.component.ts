@@ -99,15 +99,30 @@ export class EmployeeListComponent {
       }
     });
   }
-  ngOnInit(): void {
-    this.loadEmployees();
-    console.log(this.data);
-    console.log('hi');
-  }
-
+  
   onSearchChange(value: string): void {
     this.searchKeyword.set(value ?? '');
     console.log('Search keyword:', this.searchKeyword());
+   
+  }
+  onSearchClick() {
+    this.employeeService
+      .searchEmployees(
+        {
+          keyword : this.searchKeyword()
+        }
+      )
+      .subscribe({
+        next: (res) => {
+          this.data.set(res.content);
+          this.totalElement.set(res.totalElements);
+          this.pageIndex.set(res.number ?? this.pageIndex());
+          this.pageSize.set(res.size ?? this.pageSize());
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
   }
 
   onPageChange(event:{
@@ -116,7 +131,7 @@ export class EmployeeListComponent {
   }): void {
     this.pageIndex.set(event.page);
     this.pageSize.set(event.size);
-    this.loadEmployees();
+    this.ngOnInit;
   }
   onSortChange(event:{
     field: string;
@@ -125,7 +140,12 @@ export class EmployeeListComponent {
     this.sortField.set(event.field);
     this.sortDirection.set(event.direction);
     this.pageIndex.set(0);
-    this.loadEmployees();
+   
   }
 
+  ngOnInit(): void {
+    this.loadEmployees();
+    this.onSearchClick();
+    console.log(this.data);
+  }
 }
