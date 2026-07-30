@@ -61,5 +61,21 @@
     },
     "HEADER": {
      "LOGOUT": "退出登录"
+    },
+    "API": {
+        "EMPLOYEE": {
+            "ID": "编号",
+            "EMPLOYEE_CODE": "员工编号",
+            "FULL_NAME": "姓名",
+            "GENDER": "性别",
+            "DATE_OF_BIRTH": "出生日期",
+            "EMAIL": "电子邮箱",
+            "PHONE": "电话号码",
+            "DEPARTMENT_ID": "部门编号",
+            "POSITION_ID": "职位编号",
+            "JOIN_DATE": "入职日期",
+            "SALARY": "薪资",
+            "STATUS": "状态"
+        }
     }
 }

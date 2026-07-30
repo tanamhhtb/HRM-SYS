@@ -1,17 +1,19 @@
+import { environment } from './../../../environments/environment.ts';
 import { HttpClient , HttpParams } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable , inject } from "@angular/core";
 import { Observable } from "rxjs";
 import { Page } from "../models/page.model";
 
 @Injectable()
 export abstract class CrudService<T> {
+    protected http = inject(HttpClient);
+    private baseUrl = environment.apiVersions.v1;
     protected constructor(
-        protected http:HttpClient,
         protected apiUrl: string
     ){}
 
-    list() : Observable<T[]> {
-        return this.http.get<T[]>(this.apiUrl);
+    list() : Observable<Page<T>> {
+        return this.http.get<Page<T>>(`${this.baseUrl}/${this.apiUrl}`);
     }
 
     getPage(
@@ -24,26 +26,20 @@ export abstract class CrudService<T> {
             .set('size', size);
 
         if(sort) params = params.set('sort',sort);
-        return this.http.get<Page<T>>(this.apiUrl, {params})
+        return this.http.get<Page<T>>(`${this.baseUrl}/${this.apiUrl}`, {params})
     }
 
-    get(
-        id: number | string
-    ): Observable<T> {
-        return this.http.get<T>(`${this.apiUrl}/${id}`);
-    }
-
-    create(
+     create(
         data: T
     ): Observable<T> {
-        return this.http.post<T>(this.apiUrl, data);
+        return this.http.post<T>(`${this.baseUrl}/${this.apiUrl}`, data);
     }
 
     update(
         id: number | string,
         data: T
     ): Observable<T> {
-        return this.http.put<T>(`${this.apiUrl}/${id}`, data);
+        return this.http.put<T>(`${this.baseUrl}/${this.apiUrl}/${id}`, data);
     }
 
     delete(

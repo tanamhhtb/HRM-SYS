@@ -2,3 +2,15 @@
     [fields]="fields"
     [formClass]="formClass" 
 ></app-dynamic-form>
+
+<app-data-table
+  class="mt-4  gap-4"
+  [columns]="columns"
+  [data]="data()"
+  [totalElements]="totalElement()"
+  [pageIndex]="pageIndex()"
+  [pageSize]="pageSize()"
+  [sortField]="sortField()"
+  [sortDirection]="sortDirection()"
+>
+</app-data-table>

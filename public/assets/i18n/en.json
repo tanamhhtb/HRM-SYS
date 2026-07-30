@@ -62,5 +62,21 @@
     },
     "HEADER": {
      "LOGOUT": "Logout"
+    },
+    "API": {
+        "EMPLOYEE": {
+            "ID": "ID",
+            "EMPLOYEE_CODE": "Employee Code",
+            "FULL_NAME": "Full Name",
+            "GENDER": "Gender",
+            "DATE_OF_BIRTH": "Date of Birth",
+            "EMAIL": "Email",
+            "PHONE": "Phone Number",
+            "DEPARTMENT_ID": "Department ID",
+            "POSITION_ID": "Position ID",
+            "JOIN_DATE": "Join Date",
+            "SALARY": "Salary",
+            "STATUS": "Status"
+        }
     }
 }

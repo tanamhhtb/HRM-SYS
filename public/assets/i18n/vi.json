@@ -61,5 +61,22 @@
     },
     "HEADER": {
      "LOGOUT": "Đăng xuất"
+    },
+    
+    "API": {
+        "EMPLOYEE": {
+            "ID": "ID",
+            "EMPLOYEE_CODE": "Mã nhân viên",
+            "FULL_NAME": "Họ và tên",
+            "GENDER": "Giới tính",
+            "DATE_OF_BIRTH": "Ngày sinh",
+            "EMAIL": "Email",
+            "PHONE": "Số điện thoại",
+            "DEPARTMENT_ID": "Mã phòng ban",
+            "POSITION_ID": "Mã chức vụ",
+            "JOIN_DATE": "Ngày vào làm",
+            "SALARY": "Lương",
+            "STATUS": "Trạng thái"
+        }
     }
 }

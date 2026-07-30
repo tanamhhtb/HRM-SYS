@@ -79,7 +79,7 @@ export class LoginComponent {
       password: data['password'], 
     }).subscribe({
       next: () => {
-        const returnUrl = this.route.snapshot.queryParams['returnUrl'] ?? '/dashboard';
+        const returnUrl = this.route.snapshot.queryParams['returnUrl'] ?? '/app-employee-list';
         this.router.navigateByUrl(returnUrl);
       },
       error: (err) => {
