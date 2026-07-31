@@ -1,11 +1,12 @@
 import { TableColumn } from "../../../shared/models/table.model";
 import { Employee } from "../models/employee.model";
+
 export const EMPLOYEE_COLUMNS: TableColumn<Employee>[] = [
-  { key: 'id', label: 'ID' },
-  { key: 'employeeCode', label: 'Mã nhân viên' },
-  { key: 'fullName', label: 'Họ tên' },
-  { key: 'gender', label: 'Giới tính' },
-  { key: 'email', label: 'Email' },
-  { key: 'phone', label: 'Số điện thoại' },
-  { key: 'status', label: 'Trạng thái' }
+  { key: 'id', label: 'API.EMPLOYEE.ID' },
+  { key: 'employeeCode', label: 'API.EMPLOYEE.EMPLOYEE_CODE' },
+  { key: 'fullName', label: 'API.EMPLOYEE.FULL_NAME' },
+  { key: 'gender', label: 'API.EMPLOYEE.GENDER' },
+  { key: 'email', label: 'API.EMPLOYEE.EMAIL' },
+  { key: 'phone', label: 'API.EMPLOYEE.PHONE' },
+  { key: 'status', label: 'API.EMPLOYEE.STATUS' }
 ];

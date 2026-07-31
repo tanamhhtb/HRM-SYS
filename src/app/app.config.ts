@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection,provideAppInitializer,inject} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
 import { tokenInterceptor } from './core/interceptors/token.interceptor';
 import { globalHttpErrorInterceptor } from './core/interceptors/global-http-error.interceptor';
-
+import { AuthService } from './core/services/auth.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimationsAsync(),
@@ -20,6 +20,10 @@ export const appConfig: ApplicationConfig = {
         // globalHttpErrorInterceptor,
       ])
     ),
+     provideAppInitializer(() => {
+      const authService = inject(AuthService);
+      return authService.restoreSession();
+    }),
     provideToastr(),
     provideTranslateService({
       lang: 'vi',
