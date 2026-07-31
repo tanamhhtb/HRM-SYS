@@ -14,7 +14,7 @@ import { EMPLOYEE_COLUMNS } from '../../constants/employee.constant';
 
 export type dynamicForm = SearchField | SelectField;
 @Component({
-  selector: 'app-employee-list',
+  selector: 'employee',
   imports: [
     DataTableComponent,
     DynamicFormComponent
