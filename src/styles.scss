@@ -14,7 +14,7 @@
   --background-color: #FFFFFF;
   --checkbox-checkmark-color: #2563EB;
   --checkbox-border-color: #2563EB;
-  --border-radius-btn: 4px;
+  --border-radius-btn: 6px;
   --border-btn-style : 1.5px solid;
   --border-width-checkbox: 0 2px 2px 0;
   --transform-rotate-checkbox: rotate(45deg);
@@ -84,6 +84,26 @@
   transition: background-color 0.2s;
   grid-column: 1 / span 12;
   cursor: pointer;
+  &:hover { background-color: var(--primary-color-hover); }
+  &:active { background-color: var(--primary-color-active); }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+.button-change-password {
+  width: 150px;             
+  padding: 10px 0;
+  border-radius: var(--border-radius-btn);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--btn-blue);
+  transition: background-color 0.2s;
+  grid-column: 1 / span 12;   
+  justify-self: end;
+  cursor: pointer;
+
   &:hover { background-color: var(--primary-color-hover); }
   &:active { background-color: var(--primary-color-active); }
   &:disabled {
