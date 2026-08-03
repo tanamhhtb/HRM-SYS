@@ -27,7 +27,7 @@ export const routes: Routes = [
           import('./features/employee/pages/employee-list/employee-list.component')
             .then(m => m.EmployeeListComponent)
       },
-      { path: '**', redirectTo: ''}
+      { path: '**', redirectTo: 'dashbroad'}
     ],
   },
   { path: '**', redirectTo: 'login' },
