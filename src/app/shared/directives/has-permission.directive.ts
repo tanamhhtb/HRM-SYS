@@ -6,7 +6,7 @@ import { PermissionService } from '../../core/services/permission.service';
   standalone: true,
 })
 export class HasPermissionDirective {
-  hasPermission = input.required<string>();
+  hasPermission = input<string>();
 
   private templateRef    = inject(TemplateRef);
   private viewContainer  = inject(ViewContainerRef);
@@ -16,9 +16,13 @@ export class HasPermissionDirective {
     effect(() => {
       this.viewContainer.clear();
 
-      if (this.permissionService.hasPermission(this.hasPermission())) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
+    const permission = this.hasPermission();
+    const canHave = !permission || this.permissionService.hasPermission(permission);
+
+      if (canHave) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
       }
-    });
-  }
+    })
+  };
+  
 }
