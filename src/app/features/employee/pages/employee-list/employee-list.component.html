@@ -1,0 +1,18 @@
+<app-dynamic-form
+    [fields]="fields"
+    [formClass]="formClass" 
+></app-dynamic-form>
+
+<app-data-table
+  class="mt-4  gap-4"
+  [columns]="columns"
+  [data]="data()"
+  [totalElements]="totalElement()"
+  [pageIndex]="pageIndex()"
+  [pageSize]="pageSize()"
+  [sortField]="sortField()"
+  [sortDirection]="sortDirection()"
+  (pageChange)="onPageChange($event)"
+  (sortChange)="onSortChange($event)"
+>
+</app-data-table>

@@ -1,6 +1,5 @@
 export interface MenuItem {
-  label: string;
-  icon: string;
-  route: string;
+  labelKey: string;
+  route?: string;
   permission?: string;
 }

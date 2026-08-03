@@ -21,6 +21,7 @@ export class LoginComponent {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private translate = inject(TranslateService);
+  formClass = '';
 
   fields: LoginFormFields[] = [
   {
@@ -78,7 +79,7 @@ export class LoginComponent {
       password: data['password'], 
     }).subscribe({
       next: () => {
-        const returnUrl = this.route.snapshot.queryParams['returnUrl'] ?? '/dashboard';
+        const returnUrl = this.route.snapshot.queryParams['returnUrl'] ?? '/app-employee-list';
         this.router.navigateByUrl(returnUrl);
       },
       error: (err) => {
