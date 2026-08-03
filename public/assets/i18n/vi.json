@@ -46,6 +46,33 @@
             "INVALID_CREDENTIALS": "Sai tài khoản hoặc mật khẩu"
         }
     },
+    "PROFILE": {
+     "INFO": {
+      "DEPARTMENT": "Phòng ban",
+      "POSITION": "Chức danh",
+      "EMAIL": "Email",
+      "PHONE": "Điện thoại",
+      "LAST_LOGIN": "Đăng nhập cuối",
+      "NO_DATA": "Chưa có"
+     },
+     "PERMISSIONS": {
+      "TITLE": "Quyền của tôi (permissions)"
+     },
+     "CHANGE_PASSWORD": {
+      "TITLE": "Đổi mật khẩu",
+      "CURRENT_LABEL": "Mật khẩu hiện tại",
+      "CURRENT_PLACEHOLDER": "••••••",
+      "NEW_LABEL": "Mật khẩu mới",
+      "NEW_PLACEHOLDER": "••••••",
+      "SUBMIT": "Cập nhật mật khẩu",
+      "VALIDATION": {
+        "CURRENT_REQUIRED": "Vui lòng nhập mật khẩu hiện tại",
+        "NEW_REQUIRED": "Vui lòng nhập mật khẩu mới",
+        "NEW_MIN": "Mật khẩu mới phải có ít nhất 6 ký tự"
+      }
+     }
+    },
+    
     "LAYOUT": {
      "MENU": {
       "DASHBOARD": "Tổng quan",
@@ -60,6 +87,8 @@
      }
     },
     "HEADER": {
+     "LOGOUT": "Đăng xuất",
+     "PROFILE": "Hồ sơ cá nhân"
      "LOGOUT": "Đăng xuất"
     },
     

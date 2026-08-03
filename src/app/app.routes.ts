@@ -1,9 +1,5 @@
 import { Routes } from '@angular/router';
-
-import { ConfirmDialogComponent } from './shared/components/confirm-dialog/confirm-dialog.component';
-
 import { authGuard } from './core/guards/auth.guard';
-import { DataTableDemoComponent } from './features/pages/data-table-demo/data-table-demo.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   {
@@ -12,7 +8,6 @@ export const routes: Routes = [
       import('./features/auth/pages/login/login.component')
         .then(m => m.LoginComponent),
   },
-  { path: 'app-confirm-dialog', component: ConfirmDialogComponent},
   {
     path: '',
     loadComponent: () =>
@@ -20,14 +15,50 @@ export const routes: Routes = [
         .then(m => m.MainLayoutComponent),
     canActivate: [authGuard],
     children: [
-      { path: '', redirectTo: 'dashbroad', pathMatch: 'full'},
-      { path: 'dashboard', component: DataTableDemoComponent },
-      { path: 'employee', 
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard',
         loadComponent: () => 
-          import('./features/employee/pages/employee-list/employee-list.component')
-            .then(m => m.EmployeeListComponent)
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'employee',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'department',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'position',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'attendance',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'leave',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'payroll',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'user',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      { path: 'role',
+        loadComponent: () => 
+          import('./features/pages/data-table-demo/data-table-demo.component')
+            .then(m => m.DataTableDemoComponent) },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./features/profile/pages/profile.component')
+            .then(m => m.ProfilePageComponent),
       },
-      { path: '**', redirectTo: 'dashbroad'}
+      { path: '**', redirectTo: 'dashboard' },
     ],
   },
   { path: '**', redirectTo: 'login' },

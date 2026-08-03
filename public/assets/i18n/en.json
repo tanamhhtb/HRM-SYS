@@ -47,6 +47,33 @@
         "DELETE_BTN": "Erase"
     },
     
+    "PROFILE": {
+     "INFO": {
+      "DEPARTMENT": "Department",
+      "POSITION": "Position",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "LAST_LOGIN": "Last Login",
+      "NO_DATA": "No Data"
+     },
+     "PERMISSIONS": {
+      "TITLE": "My Permissions"
+     },
+     "CHANGE_PASSWORD": {
+      "TITLE": "Change Password",
+      "CURRENT_LABEL": "Current Password",
+      "CURRENT_PLACEHOLDER": "••••••",
+      "NEW_LABEL": "New Password",
+      "NEW_PLACEHOLDER": "••••••",
+      "SUBMIT": "Update Password",
+      "VALIDATION": {
+        "CURRENT_REQUIRED": "Please enter your current password",
+        "NEW_REQUIRED": "Please enter a new password",
+        "NEW_MIN": "The new password must be at least 6 characters long"
+      }
+     }
+    },
+    
     "LAYOUT": {
      "MENU": {
       "DASHBOARD": "Dashboard",
@@ -61,6 +88,8 @@
      }
     },
     "HEADER": {
+     "LOGOUT": "Logout",
+     "PROFILE": "Profile"
      "LOGOUT": "Logout"
     },
     "API": {

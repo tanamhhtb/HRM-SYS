@@ -47,6 +47,32 @@
         "CANCEL_BTN": "Annuler",
         "DELETE_BTN": "Effacer"
     },
+    "PROFILE": {
+     "INFO": {
+      "DEPARTMENT": "Département",
+      "POSITION": "Poste",
+      "EMAIL": "E-mail",
+      "PHONE": "Téléphone",
+      "LAST_LOGIN": "Dernière connexion",
+      "NO_DATA": "Aucune donnée"
+     },
+     "PERMISSIONS": {
+      "TITLE": "Mes autorisations"
+     },
+     "CHANGE_PASSWORD": {
+      "TITLE": "Changer le mot de passe",
+      "CURRENT_LABEL": "Mot de passe actuel",
+      "CURRENT_PLACEHOLDER": "••••••",
+      "NEW_LABEL": "Nouveau mot de passe",
+      "NEW_PLACEHOLDER": "••••••",
+      "SUBMIT": "Mettre à jour le mot de passe",
+      "VALIDATION": {
+        "CURRENT_REQUIRED": "Veuillez saisir votre mot de passe actuel",
+        "NEW_REQUIRED": "Veuillez saisir un nouveau mot de passe",
+        "NEW_MIN": "Le nouveau mot de passe doit contenir au moins 6 caractères"
+      }
+     }
+    },
     
     "LAYOUT": {
      "MENU": {
@@ -62,6 +88,8 @@
      }
     },
     "HEADER": {
+     "LOGOUT": "Se déconnecter",
+     "PROFILE": "Profil"
      "LOGOUT": "Se déconnecter"
     },
     "API": {

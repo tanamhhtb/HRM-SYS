@@ -1,0 +1,78 @@
+@if (user(); as u) {
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-4">
+
+      <div class="w-full md:w-[360px] shrink-0 bg-white rounded-3xl shadow-sm border border-gray-200 p-4">
+        <div class="flex justify-center">
+          <div class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+            {{ initials() }}
+          </div>
+        </div>
+        <h2 class="mt-4 text-center text-lg font-semibold text-slate-800">
+          {{ u.employee?.fullName }}
+        </h2>
+        <p class="text-center text-sm text-slate-500">
+          {{ u.employee?.employeeCode }} · {{ u.username }}
+        </p>
+        <div class="flex justify-center mt-2">
+          <span class="px-3 py-1 rounded text-xs font-semibold border border-red-700 bg-red-100 text-red-700">
+            {{ u.role?.code }}
+          </span>
+        </div>
+        <div class="mt-6 space-y-3 text-sm">
+          @if (u.employee?.departmentId) {
+            <div class="flex">
+              <span class="w-32 shrink-0 text-gray-500">{{ 'PROFILE.INFO.DEPARTMENT' | translate }}</span>
+              <span class="flex-1 break-all text-gray-800">{{ departmentName() | translate}}</span>
+            </div>
+          }
+          @if (u.employee?.positionId) {
+            <div class="flex">
+              <span class="w-32 shrink-0 text-gray-500">{{ 'PROFILE.INFO.POSITION' | translate }}</span>
+              <span class="flex-1 break-all text-gray-800">{{ positionName() | translate }}</span>
+            </div>
+          }
+          <div class="flex">
+            <span class="w-32 shrink-0 text-gray-500">{{ 'PROFILE.INFO.EMAIL' | translate }}</span>
+            <span class="flex-1 break-all text-gray-800">{{ u.email }}</span>
+          </div>
+          <div class="flex">
+            <span class="w-32 shrink-0 text-gray-500">{{ 'PROFILE.INFO.PHONE' | translate }}</span>
+            <span class="flex-1 break-all text-gray-800">{{ u.employee?.phone }}</span>
+          </div>
+          <div class="flex">
+            <span class="w-32 shrink-0 text-gray-500">{{ 'PROFILE.INFO.LAST_LOGIN' | translate }}</span>
+            <span class="flex-1 break-all text-gray-800">
+              {{ u.lastLoginAt ? (u.lastLoginAt | date:'dd/MM/yyyy HH:mm') : ('PROFILE.INFO.NO_DATA' | translate) }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 flex flex-col gap-4 w-full">
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-3 min-h-52 ">
+          <h3 class="text-sm font-semibold text-gray-700 mb-2">
+            {{ 'PROFILE.PERMISSIONS.TITLE' | translate }}
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            @for (perm of u.permissions; track perm) {
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-medium bg-indigo-50 text-indigo-800 border border-indigo-200">
+                {{ perm }}
+              </span> 
+            }
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200 p-4 h-full">
+          <h3 class="text-sm font-semibold text-gray-700 mb-3">
+            {{ 'PROFILE.CHANGE_PASSWORD.TITLE' | translate }}
+          </h3>
+          <app-dynamic-form
+            [fields]="changePasswordFields"
+            [submitLabel]="'PROFILE.CHANGE_PASSWORD.SUBMIT'"
+            [buttonClass]="'button-change-password'"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+}
