@@ -45,5 +45,67 @@
         "ERROR": {
             "INVALID_CREDENTIALS": "Sai tài khoản hoặc mật khẩu"
         }
-  }
+    },
+    "PROFILE": {
+     "INFO": {
+      "DEPARTMENT": "Phòng ban",
+      "POSITION": "Chức danh",
+      "EMAIL": "Email",
+      "PHONE": "Điện thoại",
+      "LAST_LOGIN": "Đăng nhập cuối",
+      "NO_DATA": "Chưa có"
+     },
+     "PERMISSIONS": {
+      "TITLE": "Quyền của tôi (permissions)"
+     },
+     "CHANGE_PASSWORD": {
+      "TITLE": "Đổi mật khẩu",
+      "CURRENT_LABEL": "Mật khẩu hiện tại",
+      "CURRENT_PLACEHOLDER": "••••••",
+      "NEW_LABEL": "Mật khẩu mới",
+      "NEW_PLACEHOLDER": "••••••",
+      "SUBMIT": "Cập nhật mật khẩu",
+      "VALIDATION": {
+        "CURRENT_REQUIRED": "Vui lòng nhập mật khẩu hiện tại",
+        "NEW_REQUIRED": "Vui lòng nhập mật khẩu mới",
+        "NEW_MIN": "Mật khẩu mới phải có ít nhất 6 ký tự"
+      }
+     }
+    },
+    
+    "LAYOUT": {
+     "MENU": {
+      "DASHBOARD": "Tổng quan",
+      "EMPLOYEE": "Nhân viên",
+      "DEPARTMENT": "Phòng ban",
+      "POSITION": "Chức danh",
+      "ATTENDANCE": "Chấm công",
+      "LEAVE": "Nghỉ phép",
+      "PAYROLL": "Bảng lương",
+      "USER": "Người dùng",
+      "ROLE": "Vai trò & Quyền"
+     }
+    },
+    "HEADER": {
+     "LOGOUT": "Đăng xuất",
+     "PROFILE": "Hồ sơ cá nhân"
+     "LOGOUT": "Đăng xuất"
+    },
+    
+    "API": {
+        "EMPLOYEE": {
+            "ID": "ID",
+            "EMPLOYEE_CODE": "Mã nhân viên",
+            "FULL_NAME": "Họ và tên",
+            "GENDER": "Giới tính",
+            "DATE_OF_BIRTH": "Ngày sinh",
+            "EMAIL": "Email",
+            "PHONE": "Số điện thoại",
+            "DEPARTMENT_ID": "Mã phòng ban",
+            "POSITION_ID": "Mã chức vụ",
+            "JOIN_DATE": "Ngày vào làm",
+            "SALARY": "Lương",
+            "STATUS": "Trạng thái"
+        }
+    }
 }

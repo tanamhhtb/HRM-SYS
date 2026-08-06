@@ -9,8 +9,8 @@ export interface Employee {
   fullName: string;
   email: string;
   phone?: string;
-  departmentId?: number;
-  positionId?: number;
+  departmentId: number;
+  positionId: number;
   status: string;
 }
 export interface AuthUser {
@@ -23,6 +23,7 @@ export interface AuthUser {
   role: Role | null;
   permissions: string[];
   employee: Employee | null;
+  lastLoginAt : string | null;
 }
 export interface LoginRequest {
   username: string;

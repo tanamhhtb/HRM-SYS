@@ -45,5 +45,65 @@
     "BTN": {
         "CANCEL_BTN": "取消",
         "DELETE_BTN": "擦除"
+    },
+    "PROFILE": {
+     "INFO": {
+      "DEPARTMENT": "部门",
+      "POSITION": "职位",
+      "EMAIL": "电子邮箱",
+      "PHONE": "电话",
+      "LAST_LOGIN": "最后登录",
+      "NO_DATA": "暂无数据"
+     },
+     "PERMISSIONS": {
+      "TITLE": "我的权限"
+     },
+     "CHANGE_PASSWORD": {
+      "TITLE": "修改密码",
+      "CURRENT_LABEL": "当前密码",
+      "CURRENT_PLACEHOLDER": "••••••",
+      "NEW_LABEL": "新密码",
+      "NEW_PLACEHOLDER": "••••••",
+      "SUBMIT": "更新密码",
+      "VALIDATION": {
+        "CURRENT_REQUIRED": "请输入当前密码",
+        "NEW_REQUIRED": "请输入新密码",
+        "NEW_MIN": "新密码至少需要 6 个字符"
+      }
+     }
+    },
+    "LAYOUT": {
+     "MENU": {
+      "DASHBOARD": "仪表盘",
+      "EMPLOYEE": "员工",
+      "DEPARTMENT": "部门",
+      "POSITION": "职位",
+      "ATTENDANCE": "考勤",
+      "LEAVE": "请假",
+      "PAYROLL": "工资单",
+      "USER": "用户",
+      "ROLE": "角色与权限"
+     }
+    },
+    "HEADER": {
+     "LOGOUT": "退出登录",
+     "PROFILE": "个人资料"
+     "LOGOUT": "退出登录"
+    },
+    "API": {
+        "EMPLOYEE": {
+            "ID": "编号",
+            "EMPLOYEE_CODE": "员工编号",
+            "FULL_NAME": "姓名",
+            "GENDER": "性别",
+            "DATE_OF_BIRTH": "出生日期",
+            "EMAIL": "电子邮箱",
+            "PHONE": "电话号码",
+            "DEPARTMENT_ID": "部门编号",
+            "POSITION_ID": "职位编号",
+            "JOIN_DATE": "入职日期",
+            "SALARY": "薪资",
+            "STATUS": "状态"
+        }
     }
 }

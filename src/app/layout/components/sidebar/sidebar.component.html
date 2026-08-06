@@ -1,0 +1,17 @@
+<aside class="w-56 h-screen bg-gray-900 text-white flex flex-col">
+  <div class="h-14 flex items-center px-4 font-bold text-lg">
+    HRM System
+  </div>
+  <nav class="flex-1 overflow-y-auto py-4">
+    @for (item of menuItems; track item.route) {
+        <a
+          *hasPermission="item.permission"
+          [routerLink]="item.route"
+          routerLinkActive="bg-blue-600 text-white font-semibold"
+          class="block px-4 py-2.5 mx-2 rounded-lg text-sm text-gray-300 hover:bg-gray-800"
+        >
+          {{ item.labelKey | translate }}
+        </a>
+      } 
+  </nav>
+</aside>

@@ -1,5 +1,5 @@
 export interface TableColumn<T = any> {
-  key: keyof T | string;
+  key: keyof T ;
   label: string;
   sortable?: boolean;
   align?: 'left' | 'center' | 'right';
