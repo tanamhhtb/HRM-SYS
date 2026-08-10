@@ -22,8 +22,8 @@ export const routes: Routes = [
             .then(m => m.DataTableDemoComponent) },
       { path: 'employee',
         loadComponent: () => 
-          import('./features/pages/data-table-demo/data-table-demo.component')
-            .then(m => m.DataTableDemoComponent) },
+          import('./features/employee/pages/employee-list/employee-list.component')
+            .then(m => m.EmployeeListComponent) },
       { path: 'department',
         loadComponent: () => 
           import('./features/pages/data-table-demo/data-table-demo.component')
