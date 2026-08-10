@@ -1,7 +1,9 @@
 <form
   [formGroup]="form"
   (ngSubmit)="onSubmit()"
-  class="grid grid-cols-12 gap-4 w-full">
+  [ngClass]="formClass()"
+  class="grid grid-cols-12 gap-y-2 gap-x-4 ">
+
 
   @for (field of fields(); track field.name) {
 

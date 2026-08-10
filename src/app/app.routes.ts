@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   {
     path: 'login',
     loadComponent: () =>
@@ -57,6 +58,7 @@ export const routes: Routes = [
           import('./features/profile/pages/profile.component')
             .then(m => m.ProfilePageComponent),
       },
+      { path: '**', redirectTo: 'dashboard' },
     ],
   },
   { path: '**', redirectTo: 'login' },
