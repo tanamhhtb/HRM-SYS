@@ -42,6 +42,7 @@ export class DynamicFormComponent {
   form = new FormGroup({});
   submitLabel = input<string>('');
   buttonClass = input<string>('');
+  formClass = input<string>('');
   constructor() {
     effect(() => {
       this.fields().forEach(field => {
