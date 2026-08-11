@@ -36,3 +36,16 @@ export interface EmployeeListViewModel {
     salary: number;
     status: EmployeeStatus
 }
+
+export interface SearchRequest {
+    page?: number;
+    size?: number;
+    sort?: string;
+    keyword?: string;
+}
+
+export interface EmployeeSearchRequest {
+    departmentId ?: number;
+    positionId?: number;
+    status?: EmployeeStatus;
+}

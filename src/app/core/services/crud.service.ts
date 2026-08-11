@@ -1,11 +1,11 @@
-import { environment } from './../../../environments/environment.ts';
+import { environment } from './../../../environments/environment';
 import { HttpClient , HttpParams } from "@angular/common/http";
 import { Injectable , inject } from "@angular/core";
 import { Observable } from "rxjs";
 import { Page } from "../models/page.model";
 
 @Injectable()
-export abstract class CrudService<T> {
+export abstract class CrudService<T, S extends object = object> {
     protected http = inject(HttpClient);
     private baseUrl = environment.apiVersions.v1;
     protected constructor(
@@ -48,11 +48,15 @@ export abstract class CrudService<T> {
         return this.http.delete<void>(`${this.apiUrl}/${id}`);        
     }
 
-    search(
-        keyword: string
-    ): Observable<T[]>{
-        let params = new HttpParams()
-            .set('keyword', keyword);
-        return this.http.get<T[]>(`${this.apiUrl}/search`, {params});
-    }
+    search(request: S): Observable<T[]> {
+    let params = new HttpParams();
+
+    Object.entries(request).forEach(([key, value]) => {
+      if (value !== undefined && value !== null && value !== '') {
+        params = params.set(key, String(value));
+      }
+    });
+
+    return this.http.get<T[]>(`${this.apiUrl}/search`, { params });
+  }
 }

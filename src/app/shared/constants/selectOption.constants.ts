@@ -1,4 +1,4 @@
-import { DynamicFieldOption } from './../../models/base-field-config.model';
+import { DynamicFieldOption } from '../models/base-field-config.model';
 enum UserRole {
     Admin = 'ADMIN',
     User = 'USER',
