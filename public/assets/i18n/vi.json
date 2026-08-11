@@ -89,5 +89,17 @@
     "HEADER": {
      "LOGOUT": "Đăng xuất",
      "PROFILE": "Hồ sơ cá nhân"
+    },
+
+  "DEPARTMENT": {
+    "TITLE": "Phòng ban",
+    "SEARCH_PLACEHOLDER": "Tìm theo mã/tên phòng ban...",
+    "SEARCH_BUTTON": "Tìm kiếm",
+    "LOADING": "Đang tải dữ liệu...",
+    "COLUMNS": {
+      "CODE": "Mã",
+      "NAME": "Tên phòng ban",
+      "DESCRIPTION": "Mô tả"
     }
+}
 }

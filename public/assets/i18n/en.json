@@ -90,5 +90,16 @@
     "HEADER": {
      "LOGOUT": "Logout",
      "PROFILE": "Profile"
+    },
+    "DEPARTMENT": {
+      "TITLE": "Department",
+      "SEARCH_PLACEHOLDER": "Search by department code/name...",
+      "SEARCH_BUTTON": "Search",
+      "LOADING": "Loading data...",
+      "COLUMNS": {
+        "CODE": "Code",
+        "NAME": "Department Name",
+        "DESCRIPTION": "Description"
+      }
     }
 }

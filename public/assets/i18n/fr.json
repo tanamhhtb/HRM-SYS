@@ -90,6 +90,16 @@
     "HEADER": {
      "LOGOUT": "Se déconnecter",
      "PROFILE": "Profil"
+    },
+    "DEPARTMENT": {
+      "TITLE": "Département",
+      "SEARCH_PLACEHOLDER": "Rechercher par code/nom de département...",
+      "SEARCH_BUTTON": "Rechercher",
+      "LOADING": "Chargement des données...",
+      "COLUMNS": {
+        "CODE": "Code",
+        "NAME": "Nom du département",
+        "DESCRIPTION": "Description"
+      }
     }
 }
-

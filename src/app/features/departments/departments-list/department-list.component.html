@@ -1,0 +1,26 @@
+<div class="p-4">
+  <h2 class="text-xl font-semibold mb-4">{{ 'DEPARTMENT.TITLE' | translate }}</h2>
+
+  <app-dynamic-form
+    class="mb-4"
+    [fields]="searchFields"
+    [submitLabel]="'DEPARTMENT.SEARCH_BUTTON'"
+    [buttonClass]="'bg-blue-600 text-white px-4 py-2 rounded h-fit'"
+    (formSubmit)="onSearchSubmit($event)">
+  </app-dynamic-form>
+
+  @if (loading()) {
+    <p class="text-gray-500 mb-2">{{ 'DEPARTMENT.LOADING' | translate }}</p>
+  }
+  <app-data-table
+    [columns]="columns"
+    [data]="departments()"
+    [totalElements]="totalElements()"
+    [pageIndex]="pageIndex()"
+    [pageSize]="pageSize()"
+    [sortField]="sortField()"
+    [sortDirection]="sortDirection()"
+    (pageChange)="onPageChange($event)"
+    (sortChange)="onSortChange($event)">
+  </app-data-table>
+</div>
