@@ -45,18 +45,10 @@ export abstract class CrudService<T, S extends object = object> {
     delete(
         id: number | string
     ): Observable<void>{
-        return this.http.delete<void>(`${this.apiUrl}/${id}`);        
+        return this.http.delete<void>(`${this.baseUrl}/${this.apiUrl}/${id}`);
     }
 
-    search(request: S): Observable<T[]> {
-    let params = new HttpParams();
-
-    Object.entries(request).forEach(([key, value]) => {
-      if (value !== undefined && value !== null && value !== '') {
-        params = params.set(key, String(value));
-      }
-    });
-
-    return this.http.get<T[]>(`${this.apiUrl}/search`, { params });
-  }
+    search(request: S): Observable<Page<T>> {
+        return this.http.post<Page<T>>(`${this.baseUrl}/${this.apiUrl}/search`, request);
+    }
 }

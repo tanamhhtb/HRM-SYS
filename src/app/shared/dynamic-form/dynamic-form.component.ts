@@ -39,7 +39,10 @@ import { SearchFieldComponent } from "./field-types/search-field/search-field.co
 export class DynamicFormComponent {
   fields = input.required<FieldConfig[]>();
   formSubmit = output<Record<string, any>>();
+
   searchChange = output<string>();
+  searchClick = output<void>();
+
   form = new FormGroup({});
   submitLabel = input<string>('');
   buttonClass = input<string>('');

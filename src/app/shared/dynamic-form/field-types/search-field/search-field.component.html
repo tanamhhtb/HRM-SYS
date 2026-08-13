@@ -1,7 +1,8 @@
 <div class="relative" 
 [ngClass]="config().className?.container ?? ''">
     <span
-      class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer">
+      class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer"
+      (click)="onSearchClick()">
   
       🔍
     </span>

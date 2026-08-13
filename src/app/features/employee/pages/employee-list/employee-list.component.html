@@ -1,7 +1,9 @@
 <app-dynamic-form
     [fields]="fields"
     [formClass]="formClass"
+    [buttonClass]="'button-search'"
     (searchChange)="onSearchChange($event)"
+    (searchClick)="onSearchClick()"
 ></app-dynamic-form>
 
 <app-data-table
