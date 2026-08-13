@@ -2,10 +2,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TableColumn } from '../../models/table.model';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '../pagination/pagination.component';
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-data-table',
   standalone: true,
-  imports: [CommonModule, PaginationComponent],
+  imports: [
+    CommonModule, 
+    PaginationComponent,
+    TranslatePipe
+  ],
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.scss'
 })

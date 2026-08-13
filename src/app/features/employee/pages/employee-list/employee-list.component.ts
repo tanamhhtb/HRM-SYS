@@ -9,13 +9,12 @@ import { DEPARTMENT_OPTIONS, JOB_TITLE_OPTIONS, STATUS_OPTIONS } from '../../../
 import { SelectField } from '../../../../shared/models/field-types/select-field.model';
 import { SearchField } from '../../../../shared/models/field-types/search-field.model';
 import { Employee } from '../../models/employee.model';
-import { TableColumn } from '../../../../shared/models/table.model';
 import { EMPLOYEE_COLUMNS } from '../../constants/employee.constant';
 
 
 export type dynamicForm = SearchField | SelectField;
 @Component({
-  selector: 'app-employee-list',
+  selector: 'employee',
   imports: [
     DataTableComponent,
     DynamicFormComponent
