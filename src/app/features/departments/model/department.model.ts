@@ -4,3 +4,8 @@ export interface Department {
   name: string;
   description?: string;
 }
+export interface DepartmentInput {
+  code: string;
+  name: string;
+  description?: string;
+}

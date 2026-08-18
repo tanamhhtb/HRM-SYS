@@ -98,8 +98,22 @@
         "CODE": "代码",
         "NAME": "部门名称",
         "DESCRIPTION": "描述"
+      },
+      "FORM": {
+        "TITLE_CREATE": "添加部门",
+        "TITLE_EDIT": "编辑部门",
+        "CODE": "部门代码",
+        "NAME": "部门名称",
+        "DESCRIPTION": "描述",
+        "SUBMIT": "保存",
+        "CANCEL": "取消"
+      },
+      "TOAST": {
+        "CREATE_SUCCESS": "部门创建成功",
+        "UPDATE_SUCCESS": "部门更新成功",
+        "SAVE_ERROR": "发生错误，请重试",
+        "LOAD_ERROR": "加载部门信息失败"
       }
-     "LOGOUT": "退出登录"
     },
     "API": {
         "EMPLOYEE": {

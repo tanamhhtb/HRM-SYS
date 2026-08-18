@@ -91,18 +91,32 @@
      "PROFILE": "Hồ sơ cá nhân"
     },
 
-  "DEPARTMENT": {
-    "TITLE": "Phòng ban",
-    "SEARCH_PLACEHOLDER": "Tìm theo mã/tên phòng ban...",
-    "SEARCH_BUTTON": "Tìm kiếm",
-    "LOADING": "Đang tải dữ liệu...",
-    "COLUMNS": {
+    "DEPARTMENT": {
+     "TITLE": "Phòng ban",
+     "SEARCH_PLACEHOLDER": "Tìm theo mã/tên phòng ban...",
+     "SEARCH_BUTTON": "Tìm kiếm",
+     "LOADING": "Đang tải dữ liệu...",
+     "COLUMNS": {
       "CODE": "Mã",
       "NAME": "Tên phòng ban",
       "DESCRIPTION": "Mô tả"
-     "LOGOUT": "Đăng xuất"
+     },
+     "FORM": {
+      "TITLE_CREATE": "Thêm phòng ban",
+      "TITLE_EDIT": "Chỉnh sửa phòng ban",
+      "CODE": "Mã phòng ban",
+      "NAME": "Tên phòng ban",
+      "DESCRIPTION": "Mô tả",
+      "SUBMIT": "Lưu",
+      "CANCEL": "Huỷ"
+  },
+     "TOAST": {
+      "CREATE_SUCCESS": "Tạo phòng ban thành công",
+      "UPDATE_SUCCESS": "Cập nhật phòng ban thành công",
+      "SAVE_ERROR": "Có lỗi xảy ra, vui lòng thử lại",
+      "LOAD_ERROR": "Không tải được thông tin phòng ban"
+  }
     },
-    
     "API": {
         "EMPLOYEE": {
             "ID": "ID",
@@ -119,5 +133,4 @@
             "STATUS": "Trạng thái"
         }
     }
-}
 }

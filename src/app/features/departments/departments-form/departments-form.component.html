@@ -1,0 +1,23 @@
+<div class="p-4 max-w-2xl">
+  <h2 class="text-xl font-semibold mb-4">
+    {{ (departmentId() ? 'DEPARTMENT.FORM.TITLE_EDIT' : 'DEPARTMENT.FORM.TITLE_CREATE') | translate }}
+  </h2>
+
+  @if (loading()) {
+    <p class="text-gray-500">{{ 'DEPARTMENT.LOADING' | translate }}</p>
+  } @else {
+    <app-dynamic-form
+      [fields]="fields"
+      [initialValue]="initialValue()"
+      [submitLabel]="'DEPARTMENT.FORM.SUBMIT'"
+      [buttonClass]="'bg-blue-600 text-white px-4 py-2 rounded'"
+      (formSubmit)="onSubmit($event)">
+      <button
+        type="button"
+        class="border px-4 py-2 rounded mr-2"
+        (click)="onCancel()">
+        {{ 'DEPARTMENT.FORM.CANCEL' | translate }}
+      </button>
+    </app-dynamic-form>
+  }
+</div>

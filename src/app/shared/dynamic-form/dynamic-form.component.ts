@@ -39,7 +39,7 @@ import { SearchFieldComponent } from "./field-types/search-field/search-field.co
 export class DynamicFormComponent {
   fields = input.required<FieldConfig[]>();
   formSubmit = output<Record<string, any>>();
-
+  initialValue = input<Record<string, any>>({}); 
   searchChange = output<string>();
   searchClick = output<void>();
 
@@ -49,10 +49,11 @@ export class DynamicFormComponent {
   formClass = input<string>('');
   constructor() {
     effect(() => {
+      const values = this.initialValue();   
       this.fields().forEach(field => {
         this.form.addControl(
           field.name,
-          new FormControl('', field.validators ?? [])
+          new FormControl(values[field.name] ?? '', field.validators ?? [])
         );
       });
     });

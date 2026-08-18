@@ -100,9 +100,23 @@
         "CODE": "Code",
         "NAME": "Nom du département",
         "DESCRIPTION": "Description"
-      }
-     "LOGOUT": "Se déconnecter"
+      },
+     "FORM": {
+      "TITLE_CREATE": "Add Department",
+      "TITLE_EDIT": "Edit Department",
+      "CODE": "Department Code",
+      "NAME": "Department Name",
+      "DESCRIPTION": "Description",
+      "SUBMIT": "Save",
+      "CANCEL": "Cancel"
     },
+     "TOAST": {
+      "CREATE_SUCCESS": "Department created successfully",
+      "UPDATE_SUCCESS": "Department updated successfully",
+      "SAVE_ERROR": "An error occurred, please try again",
+      "LOAD_ERROR": "Failed to load department information"
+    }
+  } ,
     "API": {
         "EMPLOYEE": {
             "ID": "ID",
