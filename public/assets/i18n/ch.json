@@ -106,13 +106,19 @@
         "NAME": "部门名称",
         "DESCRIPTION": "描述",
         "SUBMIT": "保存",
-        "CANCEL": "取消"
+        "CANCEL": "取消",
+        "DELETE": "删除"
+      },
+      "CONFIRM": {
+        "DELETE_MESSAGE": "您确定要删除这个部门吗？此操作无法撤销。"
       },
       "TOAST": {
         "CREATE_SUCCESS": "部门创建成功",
         "UPDATE_SUCCESS": "部门更新成功",
         "SAVE_ERROR": "发生错误，请重试",
-        "LOAD_ERROR": "加载部门信息失败"
+        "LOAD_ERROR": "加载部门信息失败",
+        "DELETE_SUCCESS": "部门删除成功",
+        "DELETE_ERROR": "发生错误，请重试"
       }
     },
     "API": {

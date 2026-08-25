@@ -48,4 +48,7 @@ export class DepartmentService {
   update(id: number, payload: DepartmentInput) {
     return this.http.put<Department>(DEPARTMENT_API.DEPARTMENT_BY_ID(id), payload);
   }
+  delete(id: number) {
+  return this.http.delete<void>(DEPARTMENT_API.DEPARTMENT_BY_ID(id));
+}
 }

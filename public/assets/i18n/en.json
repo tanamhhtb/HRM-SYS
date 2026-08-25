@@ -108,13 +108,19 @@
         "NAME": "Department Name",
         "DESCRIPTION": "Description",
         "SUBMIT": "Save",
-        "CANCEL": "Cancel"
+        "CANCEL": "Cancel",
+        "DELETE": "Delete"
+      },
+      "CONFIRM": {
+        "DELETE_MESSAGE": "Are you sure you want to delete this department? This action cannot be undone."
       },
       "TOAST": {
         "CREATE_SUCCESS": "Department created successfully",
         "UPDATE_SUCCESS": "Department updated successfully",
         "SAVE_ERROR": "An error occurred, please try again",
-        "LOAD_ERROR": "Failed to load department information"
+        "LOAD_ERROR": "Failed to load department information",
+        "DELETE_SUCCESS": "Department deleted successfully",
+        "DELETE_ERROR": "An error occurred, please try again"
       }
     },
     "API": {

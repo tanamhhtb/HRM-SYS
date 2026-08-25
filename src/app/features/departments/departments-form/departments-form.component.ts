@@ -84,4 +84,23 @@ export class DepartmentFormComponent implements OnInit {
   onCancel(): void {
     this.router.navigate(['/department']);
   }
+  onDelete(): void {
+  const id = this.departmentId();
+  if (!id) return;
+
+  const confirmed = confirm(
+    this.translate.instant('DEPARTMENT.CONFIRM.DELETE_MESSAGE')
+  );
+  if (!confirmed) return;
+
+  this.departmentService.delete(id).subscribe({
+    next: () => {
+      this.toastr.success(this.translate.instant('DEPARTMENT.TOAST.DELETE_SUCCESS'));
+      this.router.navigate(['/department']);
+    },
+    error: () => {
+      this.toastr.error(this.translate.instant('DEPARTMENT.TOAST.DELETE_ERROR'));
+    }
+  });
+}
 }

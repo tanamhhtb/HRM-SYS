@@ -108,13 +108,19 @@
       "NAME": "Tên phòng ban",
       "DESCRIPTION": "Mô tả",
       "SUBMIT": "Lưu",
-      "CANCEL": "Huỷ"
+      "CANCEL": "Huỷ",
+      "DELETE": "Xóa"
   },
+     "CONFIRM": {
+      "DELETE_MESSAGE": "Bạn có chắc muốn xóa ? Hành động này không thể hoàn tác.'"
+     },
      "TOAST": {
       "CREATE_SUCCESS": "Tạo phòng ban thành công",
       "UPDATE_SUCCESS": "Cập nhật phòng ban thành công",
       "SAVE_ERROR": "Có lỗi xảy ra, vui lòng thử lại",
-      "LOAD_ERROR": "Không tải được thông tin phòng ban"
+      "LOAD_ERROR": "Không tải được thông tin phòng ban",
+      "DELETE_SUCCESS": "Xóa phòng ban thành công",
+      "DELETE_ERROR": "Có lỗi xảy ra, vui lòng thử lại"
   }
     },
     "API": {
